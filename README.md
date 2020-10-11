@@ -6,12 +6,14 @@
 *-Fully and evenly distributed airdrop. No ICO. No mint function. No lockup. No dev fund.*  
 *-Contract address: *  
   
-**To Do**  
--Dev something cool
+**To Do**
+-Write script to deploy the contracts. Use truffle-flattener if it helps. 
+-Use @nomiclabs/buidler-etherscan to try to have etherscan verify contract code.
+-Learn/setup everything needed to fork the next cool token project
 -Add logo to Uniswap  
 
   
-**Roadmap**  
+**Roadmap (tentative)**  
 -Bamboo Relay Exchange listing  
 -Layer 2 Exchange listing  
   
