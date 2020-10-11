@@ -1,22 +1,55 @@
-var cartelFinance = artifacts.require("CartelFinance.sol");
-var solc = require('solc');
-module.exports = function(callback) {
+//var cartelFinance = artifacts.require("CartelFinance");
 
-    cartelFinance.web3.eth.getGasPrice(function(error, result){ 
-        var gasPrice = Number(result);
-        console.log("Gas Price is " + gasPrice + " wei"); // "10000000000000"
+contract('Simple test', ([address]) => {
 
-        var cartelFinanceContract = new web3.eth.Contract(cartelFinance._json.abi);
-        var contractData = cartelFinanceContract.new.getData({data: cartelFinance._json.bytecode});
-        var gas = Number(web3.eth.estimateGas({data: contractData}));
-
-
-        console.log("gas estimation = " + gas + " units");
-        console.log("gas cost estimation = " + (gas * gasPrice) + " wei");
-        console.log("gas cost estimation = " + cartelFinance.web3.fromWei((gas * gasPrice), 'ether') + " ether");
-
+    it("Should run", async () => {
+        assert.equal(true, true);
+        console.log("it ran");
     });
-};
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// module.exports = function(callback) {
+
+//     cartelFinance.web3.eth.getGasPrice(function(error, result){ 
+//         var gasPrice = Number(result);
+//         console.log("Gas Price is " + gasPrice + " wei"); // "10000000000000"
+
+//         var cartelFinanceContract = new web3.eth.Contract(cartelFinance._json.abi);
+//         var contractData = cartelFinanceContract.new.getData({data: cartelFinance._json.bytecode});
+//         var gas = Number(web3.eth.estimateGas({data: contractData}));
+
+
+//         console.log("gas estimation = " + gas + " units");
+//         console.log("gas cost estimation = " + (gas * gasPrice) + " wei");
+//         console.log("gas cost estimation = " + cartelFinance.web3.fromWei((gas * gasPrice), 'ether') + " ether");
+
+//     });
+// };
 
 // Run unit tests to populate my contract
 // ...

@@ -3,20 +3,17 @@
 **Highlights**  
 *-Compliant ERC-20 token following best practices. Uses Solidity version 6.9. No burn or rebase.*  
 *-Total supply of 50,000. 1000 token airdrop to 49 most dedicated DeFi Crypto Cartel members (49,000).*  
-*-Initial uniswap pool 3 ETH and 2% (1000) of token's supply. Initial market cap 150 ETH = $60,000 @ $400ETH*  
 *-Fully and evenly distributed airdrop. No ICO. No mint function. No lockup. No dev fund.*  
-*-Contract address: 0x4FeA2109624A515968167d4015e54f70D28435eE*  
+*-Contract address: *  
   
 **To Do**  
--Build website  
+-Dev something cool
 -Add logo to Uniswap  
--Update etherscan.io details  
+
   
 **Roadmap**  
 -Bamboo Relay Exchange listing  
 -Layer 2 Exchange listing  
--Farming/Staking  
--Bridge to Serum DEX or Binance Chain DEX   
   
 **Setup:**  
 1. `npm install`  (install dependencies)  
@@ -32,10 +29,17 @@
 1. Create secrets.json in this directory:  
 ```javascript
 {  
-    "mnemonic":"YOUR MNEMONIC PRIVATE KEY HERE"  
-    "infuraApiKey":"YOUR INFURA API KEY"  
+    "mnemonic":"MNEMONIC PRIVATE KEY HERE"  
+    "infuraApiKey":"INFURA API KEY"
+    "pk":"OPTIONAL PRIVATE KEY USED FOR BUIDLER"
+    "etherscanApiKey": "OPTIONAL VERIFY CONTRACT TO ETHERSCAN" 
 }  
 ```
 2. `truffle migrate --network ropsten`  
 3. `truffle console --network ropsten`  
   
+
+**Call contract to send tokens**
+1. `truffle console --network ropsten`
+2. let instance = await CartelFinance.deployed()
+3. instance.transfer("<YOURADDRESS>", 500000000)

@@ -1,41 +1,37 @@
 {
   "name": "cartel.finance",
   "version": "1.0.0",
-  "description": "cartel.finance $CFI Crypto Cartel Discord",
+  "description": "cartel.finance $CFI",
   "main": "truffle-config",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "echo \"Error: lol no tests, just put your money in\" && exit 1"
+    "test": "npx buidler test"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/CartelFinance/CFIToken"
   },
   "keywords": [
-    "cartel.finance",
-    "cartel finance",
-    "crypto cartel",
-    "cryptocurrencies",
     "erc20",
     "erc-20",
     "eth",
     "ethereum"
   ],
-  "author": "Whatthephil",
+  "author": "whatthephil",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CartelFinance/CFIToken/issues"
   },
   "homepage": "https://cartel.finance",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "request": "2.79.0",
-    "solc": "^0.6.12",
-    "truffle-hdwallet-provider": "^1.0.17",
-    "web3": "1.2.11"
+    "truffle": "^5.1.41",
+    "truffle-flattener": "^1.4.4",
+    "truffle-ledger-provider": "https://github.com/UMAprotocol/truffle-ledger-provider",
+    "@nomiclabs/buidler": "^1.4.7",
+    "@nomiclabs/buidler-etherscan": "^2.1.0",
+    "@nomiclabs/buidler-truffle5": "^1.3.4",
+    "@nomiclabs/buidler-web3": "^1.3.4",
+    "buidler-log-remover": "^1.0.1",
+    "mocha": "^8.1.3",
+    "web3": "^1.2.11"
   }
 }
