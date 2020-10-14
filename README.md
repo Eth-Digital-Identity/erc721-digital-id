@@ -1,17 +1,18 @@
-***cartel.finance***  
+***Unbranded***
   
 **Highlights**  
-*-Compliant ERC-20 token following best practices. Uses Solidity version 6.9. No burn or rebase.*  
-*-Total supply of 50,000. 1000 token airdrop to 49 most dedicated DeFi Crypto Cartel members (49,000).*  
-*-Fully and evenly distributed airdrop. No ICO. No mint function. No lockup. No dev fund.*  
-*-Contract address: *  
+*-Compliant ERC-20 token following best practices. Uses Solidity version 6.9.*  
+*-Uses Truffle for build and deployments. Can compile with Buidler and uses Buidler to run Mocha for test cases in VS Code with breakpoints.   
   
-**To Do**
+**To Do**  
+-Learn enough to be able to fork the next cool project that comes along.  
 -Write script to deploy the contracts. Use truffle-flattener if it helps.  
 -Link to an airdrop library or add airdrop function.  
--Learn/setup everything needed to fork the next cool token project.   
+-Write more test cases.  
+-Create nonfungible token that represents someones physical identity or authenticates an art piece.  
   
-**Roadmap (tentative)**
+**Roadmap (tentative)**  
+-Brand coin  
 -Deploy website  
 -Uniswap listing  
 -Bamboo Relay Exchange listing  
@@ -36,19 +37,24 @@
     "mnemonic":"MNEMONIC PRIVATE KEY HERE"  
     "infuraApiKey":"INFURA API KEY"
     "pk":"OPTIONAL PRIVATE KEY FOR BUIDLER"
-    "etherscanApiKey": "OPTIONAL VERIFY CONTRACT TO ETHERSCAN" 
+    "etherscanApiKey": "OPTIONAL VERIFY CONTRACT TO ETHERSCAN" //I tried and it wasn't able to verify using @nomiclabs/buidler-etherscan
 }  
 ```
 2. `truffle migrate --network ropsten`  
 3. `truffle console --network ropsten`  
   
-**Call contract to send tokens**
-1. `truffle console --network ropsten`
-2. var instance = await CartelFinance.deployed()
-3. instance.transfer("<YOURADDRESS>", 500000000) //50000 total supply with 4 decimals  
-
+**Call contract to send tokens**  
+`truffle console --network ropsten`  
+```
+var instance = await CartelFinance.deployed()  
+instance.transfer("<YOURADDRESS>", 500000000) //50000 total supply with 4 decimals 
+```
+Metamask won't show the tokens, but you should see them in your address on etherscan.  
+  
 **Misc Setup**
 Open extension (Ctrl+Shift+X) jshint. Go to extension settings and set esversion to 8.  
-```"jshint.options": {
+```
+   "jshint.options": {
       "esversion":8
-   }```
+   }
+```
