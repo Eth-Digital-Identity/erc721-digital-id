@@ -2,15 +2,16 @@
   
 **Highlights**  
 *-Compliant ERC-20 token following best practices. Uses Solidity version 6.9.*  
-*-Uses Truffle for build and deployments. Can compile with Buidler and uses Buidler to run Mocha for test cases in VS Code with breakpoints.   
+*-Uses Truffle for build and deployments. Can compile with Buidler and uses Buidler to run Mocha for test cases in VS Code with breakpoints.*   
   
 **To Do**  
 -Learn enough to be able to fork the next cool project that comes along.  
--Write script to deploy the contracts. Use truffle-flattener if it helps.  
+-Write script to deploy the contracts. Use @nomiclabs/truffle-flattener if it helps.  
 -Link to an airdrop library or add airdrop function.  
 -Write more test cases.  
--Create nonfungible token that represents someones physical identity or authenticates an art piece.  
-  
+-Create nonfungible token that represents someones physical identity or authenticates an art piece.    
+-Learn how to connect contract with frontend: https://codesandbox.io/s/github/NoahZinsmeister/web3-react/tree/v6/example  
+   
 **Roadmap (tentative)**  
 -Brand coin  
 -Deploy website  
