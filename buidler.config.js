@@ -25,6 +25,10 @@ module.exports = {
     kovan: {
       url: "https://kovan.infura.io/v3/"+secrets.infuraApiKey,
       accounts: [secrets.pk]
+    },
+    ropsten: {
+      url: "https://ropsten.infura.io/v3/"+secrets.infuraApiKey,
+      accounts: [secrets.pk]
     }
   },
   etherscan: {

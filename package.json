@@ -4,7 +4,9 @@
   "description": "cartel.finance $CFI",
   "main": "truffle-config",
   "scripts": {
-    "test": "npx buidler test"
+    "build": "npx buidler compile",
+    "test": "npx buidler test",
+    "verify": "npx buidler verify --network ropsten 0xfdef2f714bbd5619b7b05bf889821e09fa4cffa7"
   },
   "repository": {
     "type": "git",

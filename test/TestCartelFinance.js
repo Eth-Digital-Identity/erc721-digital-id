@@ -1,12 +1,15 @@
-//var cartelFinance = artifacts.require("CartelFinance");
+var cartelFinance = artifacts.require("CartelFinance");
+var migrations = artifacts.require("Migrations");
 
 contract('Simple test', ([address]) => {
-
-    it("Should run", async () => {
-        assert.equal(true, true);
-        console.log("it ran");
+    it("should run", async () => {
+        console.log("Tests run");
     });
-
+    it("should construct", async () => {
+        console.log("should construct");
+        //cartelFinance.deployed();
+        cartelFinance.new({ from: address });        
+    });
 });
 
 
