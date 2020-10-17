@@ -30,10 +30,10 @@ function unpackArtifact(artifactPath){
     };
 }
 
-function connectWallet(){
+function connectWallet(network){
     var wallet;
     var connectedWallet;
-    const provider = ethers.getDefaultProvider("ropsten", {
+    const provider = ethers.getDefaultProvider(network, {
         etherscan: secrets.etherscanApiKey,
         infura: secrets.infuraApiKey,
     });
@@ -45,6 +45,7 @@ function connectWallet(){
     return null;
 }
 
-
-console.log(connectWallet());
-
+var signer = connectWallet("ropsten");
+console.log(__dirname);
+let tokenUnpacked = unpackArtifact("/home/phil/workspace/CFIToken/build/contracts/GameItem.json");
+const erc721_rw = new ethers.Contract(tokenUnpacked.address, tokenUnpacked.abi, signer);
