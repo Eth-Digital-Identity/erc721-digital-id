@@ -8,7 +8,7 @@ var secrets = JSON.parse(rawdata);
 
 module.exports = {
   solc: {
-    version: "0.6.9",
+    version: "0.6.12",
   },
   defaultNetwork: "buidlerevm",
   networks: {

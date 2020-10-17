@@ -38,7 +38,7 @@
     "mnemonic":"MNEMONIC PRIVATE KEY HERE"  
     "infuraApiKey":"INFURA API KEY"
     "pk":"OPTIONAL PRIVATE KEY FOR BUIDLER"
-    "etherscanApiKey": "OPTIONAL VERIFY CONTRACT TO ETHERSCAN" //I tried and it wasn't able to verify using @nomiclabs/buidler-etherscan
+    "etherscanApiKey": "OPTIONAL VERIFY CONTRACT TO ETHERSCAN" //I tried and it wasn't able to verify using @nomiclabs/buidler-etherscan. Use truffle-flattener instead.
 }  
 ```
 2. `truffle migrate --network ropsten`  
@@ -58,4 +58,7 @@ Open extension (Ctrl+Shift+X) jshint. Go to extension settings and set esversion
    "jshint.options": {
       "esversion":8
    }
-```
+```  
+To flatten a contract so all dependencies are in a single file use:  
+```npx truffle-flattener ./contracts/try/GameItem.sol > flat.sol```  
+Note you'll need to remove all SPDX-License-Identifier's or AND all licenses as one on the top of the contract for the contract to deploy/verify sucessfully.  

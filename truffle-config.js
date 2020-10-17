@@ -10,7 +10,7 @@ var secrets = JSON.parse(rawdata);
 module.exports = {
   compilers: {
     solc: {
-      version: "0.6.9",
+      version: "0.6.12",
       settings: {
         optimizer: {
           enabled: true, // Default: false
@@ -36,7 +36,7 @@ module.exports = {
       },
       network_id: '3',
       gasPrice: web3.utils.toWei('85', 'gwei'), //gas price
-      gas: 1000000,  //gas limit
+      gas: 8000000,  //gas limit. Block limit is 8000000
       timeoutBlocks: 200,
     },
     kovan: {
