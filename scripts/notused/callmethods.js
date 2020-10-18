@@ -2,6 +2,8 @@ const { ethers, Wallet } = require("ethers");
 const fs = require("fs");
 var rawdata = fs.readFileSync('secrets.json');
 var secrets = JSON.parse(rawdata);
+var path = require('path');
+var appDir = path.dirname(require.main.filename);
 
 function unpackArtifact(artifactPath){
     let contractData = JSON.parse(fs.readFileSync(artifactPath));
@@ -46,6 +48,7 @@ function connectWallet(network){
 }
 
 var signer = connectWallet("ropsten");
-console.log(__dirname);
-let tokenUnpacked = unpackArtifact("/home/phil/workspace/CFIToken/build/contracts/GameItem.json");
-const erc721_rw = new ethers.Contract(tokenUnpacked.address, tokenUnpacked.abi, signer);
+let tokenUnpacked = unpackArtifact(__dirname+"/../../artifacts/GameItem.json");
+var contractAddress = "0x678f19065f9dA7364EaDc78e843C845D68a07CED";
+const erc721_rw = new ethers.Contract(contractAddress, tokenUnpacked.abi, signer);
+erc721_rw.name().then(console.log);
