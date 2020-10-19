@@ -50,5 +50,8 @@ function connectWallet(network){
 var signer = connectWallet("ropsten");
 let tokenUnpacked = unpackArtifact(__dirname+"/../../artifacts/GameItem.json");
 var contractAddress = "0x678f19065f9dA7364EaDc78e843C845D68a07CED";
+var myAddress = "0xFC3EE5161cdf42643C7Fb2C0be957E99b089984B";
 const erc721_rw = new ethers.Contract(contractAddress, tokenUnpacked.abi, signer);
 erc721_rw.name().then(console.log);
+erc721_rw.awardItem(myAddress,"https://ropsten.etherscan.io/address/0xfc3ee5161cdf42643c7fb2c0be957e99b089984b")
+.then(console.log).catch(console.log);
