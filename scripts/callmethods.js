@@ -50,7 +50,7 @@ function connectWallet(network){
 var signer = connectWallet("ropsten"); //Connect to ropsten testnet
 
 function deployErc721(signer){
-    let tokenUnpacked = unpackArtifact(__dirname+"/../../artifacts/GameItem.json"); //Unpack GameItem contract details
+    let tokenUnpacked = unpackArtifact(__dirname+"/../artifacts/GameItem.json"); //Unpack GameItem contract details
     var contractAddress = "0x678f19065f9dA7364EaDc78e843C845D68a07CED"; //Deployed address to request GameItem
     var myAddress = "0xFC3EE5161cdf42643C7Fb2C0be957E99b089984B"; //User address
     const erc721_rw = new ethers.Contract(contractAddress, tokenUnpacked.abi, signer); //Get instance of GameItem contract
@@ -61,7 +61,7 @@ function deployErc721(signer){
 
 
 var campaignFactoryAddress = "0xee963c9351e94aa5e8d64e279bbf7768d30b3026";
-let tokenUnpacked = unpackArtifact(__dirname+"/../../artifacts/CampaignFacotory.json");
+let tokenUnpacked = unpackArtifact(__dirname+"/../artifacts/CampaignFacotory.json");
 const campaignFactory = new ethers.Contract(campaignFactoryAddress, tokenUnpacked.abi, signer);
 //campaignFactory.createCampaign(5).then(console.log).catch(console.log);
 
