@@ -1,7 +1,7 @@
 {
-  "name": "cartel.finance",
+  "name": "eth-digital-id",
   "version": "1.0.0",
-  "description": "cartel.finance $CFI",
+  "description": "",
   "main": "truffle-config",
   "scripts": {
     "build": "npx buidler compile",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CartelFinance/CFIToken"
+    "url": ""
   },
   "keywords": [
     "erc20",
@@ -18,12 +18,12 @@
     "eth",
     "ethereum"
   ],
-  "author": "whatthephil",
+  "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CartelFinance/CFIToken/issues"
+    "url": ""
   },
-  "homepage": "https://cartel.finance",
+  "homepage": "",
   "dependencies": {
     "@nomiclabs/buidler": "^1.4.7",
     "@nomiclabs/buidler-etherscan": "^2.1.0",

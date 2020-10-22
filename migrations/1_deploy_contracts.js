@@ -1,9 +1,5 @@
-const CartelFinance = artifacts.require("CartelFinance");
-const Migrations = artifacts.require("Migrations");
+const GameItem = artifacts.require("GameItem");
 
 module.exports = function(deployer) {
-  //Deploy Migrations then if succesful deploy CartelFinance
-  deployer.deploy(Migrations).then(function() {
-    return deployer.deploy(CartelFinance);
-  });
+  deployer.deploy(GameItem);
 };
