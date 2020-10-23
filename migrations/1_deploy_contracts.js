@@ -1,5 +1,5 @@
-const GameItem = artifacts.require("GameItem");
+const DigitalIdIssuer = artifacts.require("DigitalIdIssuer");
 
 module.exports = function(deployer) {
-  deployer.deploy(GameItem);
+  deployer.deploy(DigitalIdIssuer);
 };

@@ -6,7 +6,8 @@
 *-Uses Truffle for build and deployments. Can compile with Buidler and uses Buidler to run Mocha for test cases in VS Code with breakpoints.*   
   
 **To Do**  
-
+-Deploy contract and call it with verifiedName.
+-Add ID isValid method. 
 
 **Setup:**  
 1. `npm install`  (install dependencies)  
