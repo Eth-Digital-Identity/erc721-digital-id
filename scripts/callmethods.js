@@ -49,9 +49,9 @@ function connectWallet(network){
 
 
 function CreateErc721(signer){
-    let tokenUnpacked = unpackArtifact(__dirname+"/../artifacts/GameItem.json"); //Unpack GameItem contract details
+    let tokenUnpacked = unpackArtifact(__dirname+"/../artifacts/GameItem.json"); //Unpack GameItem contract details. create with 'npx buidler compile'
     var contractAddress = "0x678f19065f9dA7364EaDc78e843C845D68a07CED"; //Deployed address to request GameItem
-    var myAddress = "0xFC3EE5161cdf42643C7Fb2C0be957E99b089984B"; //User address
+    var myAddress = "0x66D56D0B0Bc2Ff5e9d553D83B9f91227CF46aAd0"; //User address
     const erc721_rw = new ethers.Contract(contractAddress, tokenUnpacked.abi, signer); //Get instance of GameItem contract
     erc721_rw.name().then(console.log); //Get name of contract
     erc721_rw.awardItem(myAddress,"Some Data") //Call contract to send GameItem to my address
