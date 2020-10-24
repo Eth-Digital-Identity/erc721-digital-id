@@ -10,7 +10,7 @@ contract DigitalIdIssuer is ERC721 {
     Counters.Counter private _idNumber;
     mapping (uint256 => string) private _verifiedNames;
 
-    constructor() public ERC721("Digital ID Issuer", "ID") {}
+    constructor() public ERC721("Digital ID", "ID") {}
 
     function issueId(address verifiedPerson, string memory verifiedName, string memory tokenURI)
         public
@@ -29,7 +29,6 @@ contract DigitalIdIssuer is ERC721 {
 
     function _setVerifiedName(string memory name, uint256 idNumber)
         internal {
-        require(_exists(idNumber), "Digital ID number does not exsit");
         _verifiedNames[idNumber] = name; 
     }
 

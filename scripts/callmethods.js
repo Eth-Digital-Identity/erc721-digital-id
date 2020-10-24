@@ -42,11 +42,15 @@ function connectWallet(network){
     if(secrets.mnemonic != "") {
         wallet = Wallet.fromMnemonic(secrets.mnemonic);
         connectedWallet = wallet.connect(provider);
+        
         return connectedWallet;
     }
     return null;
 }
 
+let overrides = {
+    gasLimit: 800000
+};
 
 function CreateErc721(signer){
     let tokenUnpacked = unpackArtifact(__dirname+"/../artifacts/GameItem.json"); //Unpack GameItem contract details. create with 'npx buidler compile'
@@ -58,5 +62,17 @@ function CreateErc721(signer){
     .then(console.log).catch(console.log);
 }
 
+function issueId(signer){
+    let tokenUnpacked = unpackArtifact(__dirname+"/../artifacts/DigitalIdIssuer.json"); //Unpack DigitalIdIssuer contract details. create with 'npx buidler compile'
+    var contractAddress = "0xC5a94B4DB4A87a6713a97cBE3C828704918bCa6c"; //Deployed address to request DigitalIdIssuer
+    var myAddress = "0x66D56D0B0Bc2Ff5e9d553D83B9f91227CF46aAd0"; //User address
+    const digitalIdIssuerContract = new ethers.Contract(contractAddress, tokenUnpacked.abi, signer); //Get instance of DigitalIdIssuer contract
+    digitalIdIssuerContract.name().then(console.log); //Get name of contract
+    var verifiedPersonIdNumber = digitalIdIssuerContract.issueId(myAddress, "Philip Rego", "JSONMetadataURI", overrides).then(console.log).catch(console.log); //Call contract to send DigitalIdIssuer to my address
+    //digitalIdIssuerContract.getVerifiedName(2).then(console.log).catch(console.log);
+}
+
 var signer = connectWallet("ropsten"); //Connect to ropsten testnet
-CreateErc721(signer);
+issueId(signer);
+
+
