@@ -33,7 +33,7 @@ const ALGORITHM = {
      * To prevent rainbow table attacks
      * */
     SALT_BYTE_LEN: 16
-}
+};
 
 const getIV = () => crypto.randomBytes(ALGORITHM.IV_BYTE_LEN);
 exports.getRandomKey = getRandomKey = () => crypto.randomBytes(ALGORITHM.KEY_BYTE_LEN);
@@ -54,7 +54,7 @@ exports.getSalt = getSalt = () => crypto.randomBytes(ALGORITHM.SALT_BYTE_LEN);
  */
 exports.getKeyFromPassword = getKeyFromPassword = (password, salt) => {
     return crypto.scryptSync(password, salt, ALGORITHM.KEY_BYTE_LEN);
-}
+};
 
 /**
  * 
@@ -72,7 +72,7 @@ exports.encrypt = encrypt = (messagetext, key) => {
     let encryptedMessage = cipher.update(messagetext);
     encryptedMessage = Buffer.concat([encryptedMessage, cipher.final()]);
     return Buffer.concat([iv, encryptedMessage, cipher.getAuthTag()]);
-}
+};
 
 /**
  * 
@@ -93,4 +93,4 @@ exports.decrypt = decrypt = (ciphertext, key) => {
     let messagetext = decipher.update(encryptedMessage);
     messagetext = Buffer.concat([messagetext, decipher.final()]);
     return messagetext;
-}
+};

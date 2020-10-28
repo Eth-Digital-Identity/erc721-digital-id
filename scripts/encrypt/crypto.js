@@ -1,6 +1,6 @@
 const cryptoUtils = require('./crypto_utils.js');
 
-//User gives personal data (address, ssn)
+//User gives personal data (cc, address, ssn)
 let plaintext = 'my message text';
 //User gives password
 let key = cryptoUtils.getKeyFromPassword("mypassword", cryptoUtils.getSalt());
